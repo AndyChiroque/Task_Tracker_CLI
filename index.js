@@ -50,4 +50,11 @@ function saveTasks(tasks){
     }
 }
 
-//
+//function 3: Obtener el siguiente ID disponible
+function getNextId(tasks){
+    if (tasks.length === 0){
+        return 1; //Si no hay tareas, el primer ID es 1
+    }
+    //obtiene el ID máximo actual y le suma 1
+    return Math.max(...tasks.map(t => t.id)) + 1;
+}
